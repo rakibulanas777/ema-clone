@@ -1,0 +1,21 @@
+import React from "react";
+
+const Catagory = () => {
+	return (
+		<div className="catagory-btn">
+			<div className=" mx-auto py-7">
+				<div className="flex flex-wrap gap-4">
+					<button className="btn btn-primary">shoes</button>
+					<button className="btn btn-primary">shoes</button>
+					<button className="btn btn-primary">Jeans</button>
+					<button className="btn btn-primary">T-Shirt</button>
+					<button className="btn btn-primary">bags</button>
+					<button className="btn btn-primary">caps</button>
+					<button className="btn btn-primary">caps</button>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default Catagory;

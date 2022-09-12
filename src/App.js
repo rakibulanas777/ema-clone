@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Cart from "./Component/Cart";
+import Navbar from "./Shared/Navbar/Navbar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [selected, getselected] = useState([]);
+	const handleProducts = (product) => {
+		const newProduct = [...selected];
+	};
+	return (
+		<div className="App">
+			<Navbar />
+			<Cart button={handleProducts} />
+		</div>
+	);
 }
 
 export default App;
