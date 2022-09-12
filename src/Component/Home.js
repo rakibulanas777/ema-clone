@@ -3,7 +3,7 @@ import Catagory from "../Shared/Catagory";
 import Filter from "./Filter";
 import Product from "./Product";
 
-const Cart = ({ button }) => {
+const Home = ({ button }) => {
 	const [value, setValue] = useState([]);
 	useEffect(() => {
 		fetch("../../ama.json")
@@ -28,4 +28,4 @@ const Cart = ({ button }) => {
 	);
 };
 
-export default Cart;
+export default Home;

@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Cart from "./Component/Cart";
+import Home from "./Component/Home";
+import Cart from "./Component/Cart/Cart";
 import Navbar from "./Shared/Navbar/Navbar";
 
 function App() {
@@ -23,11 +25,14 @@ function App() {
 		//const newProduct = [...selected, product];
 		getselected(newCart);
 	};
-	console.log(selected);
+	//console.log(selected.map((v) => v.price * v.quantity));
 	return (
 		<div className="App">
 			<Navbar cart={selected} />
-			<Cart button={handleProducts} />
+			<Routes>
+				<Route path="/" element={<Home button={handleProducts} />} />
+				<Route path="/cart" element={<Cart />} />
+			</Routes>
 		</div>
 	);
 }

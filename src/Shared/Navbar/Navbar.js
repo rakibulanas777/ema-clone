@@ -1,6 +1,17 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import { Link, Navigate } from "react-router-dom";
 const Navbar = ({ cart }) => {
+	let total = 0;
+	let shipping = 0;
+	let quantity = 0;
+	for (const product of cart) {
+		quantity = quantity + product.quantity;
+		total = total + product.price * product.quantity;
+		shipping = shipping + product.shipping;
+	}
+	const tax = parseFloat((total * 0.1).toFixed(2));
+	const grandTotal = total + shipping + tax;
+
 	return (
 		<div className="navbar shadow-md bg-stone-50">
 			<div className="flex-1">
@@ -24,20 +35,24 @@ const Navbar = ({ cart }) => {
 									d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
 								/>
 							</svg>
-							<span className="badge badge-sm indicator-item">
-								{cart.length}
-							</span>
+							<span className="badge badge-sm indicator-item">{quantity}</span>
 						</div>
 					</label>
 					<div
 						tabIndex={0}
-						className="mt-3 card card-compact dropdown-content w-52 bg-base-100 shadow"
+						className="mt-3 card card-compact dropdown-content w-52 bg-slate-200 shadow"
 					>
 						<div className="card-body">
-							<span className="font-bold text-lg">8 Items</span>
-							<span className="text-info">Subtotal: $999</span>
+							<span className="font-bold text-lg">{quantity}</span>
+							<span className="text-info">Price : {grandTotal}</span>
 							<div className="card-actions">
-								<button className="btn btn-primary btn-block">View cart</button>
+								{cart.length && (
+									<Link to="/cart">
+										<button className="btn btn-primary btn-block">
+											View cart
+										</button>
+									</Link>
+								)}
 							</div>
 						</div>
 					</div>
@@ -50,7 +65,7 @@ const Navbar = ({ cart }) => {
 					</label>
 					<ul
 						tabIndex={0}
-						className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+						className="menu menu-compact dropdown-content mt-3 p-2 shadow  rounded-box w-52"
 					>
 						<li>
 							<a className="justify-between">
