@@ -15,11 +15,13 @@ const Cart = ({ button }) => {
 		<div className="cart">
 			<div className="container py-14 mx-auto">
 				<Catagory />
-				<Filter />
 				<div className="grid grid-cols-3 gap-4">
-					{value.map((product) => (
-						<Product products={product} handleBtn={button} />
-					))}
+					<Filter />
+					<div className="grid grid-cols-3 col-span-2 gap-4">
+						{value.map((product) => (
+							<Product products={product} handleBtn={button} />
+						))}
+					</div>
 				</div>
 			</div>
 		</div>

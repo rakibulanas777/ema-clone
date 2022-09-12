@@ -14,13 +14,13 @@ const Filter = () => {
 
 	return (
 		<div className="filter">
-			<div className="p-6  shadow-sm">
+			<div className="p-6  shadow-sm bg-white rounded-sm">
 				<div className="text-2xl text-slate-900 pb-4">Price Range</div>
 				<Slider
 					min={minNum}
 					max={maxNum}
 					step={10}
-					value={10}
+					value={range}
 					onChange={rangeOnChange}
 				/>
 			</div>
