@@ -31,7 +31,7 @@ function App() {
 			<Navbar cart={selected} />
 			<Routes>
 				<Route path="/" element={<Home button={handleProducts} />} />
-				<Route path="/cart" element={<Cart />} />
+				<Route path="/cart" element={<Cart cart={selected} />} />
 			</Routes>
 		</div>
 	);
