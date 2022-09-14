@@ -7,7 +7,6 @@ const Product = ({ products, handleBtn }) => {
 			<div className="text-2xl text-center text-blue-900 mb-2 font-semibold">
 				Price : ${products.price}
 			</div>
-			{products.name}
 			<button
 				className="btn btn-primary w-full"
 				onClick={() => handleBtn(products)}

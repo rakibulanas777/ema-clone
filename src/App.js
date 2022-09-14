@@ -3,10 +3,19 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Component/Home";
 import Cart from "./Component/Cart/Cart";
+import PropagateLoader from "react-spinners/PropagateLoader";
 import Navbar from "./Shared/Navbar/Navbar";
+import { useEffect } from "react";
 
 function App() {
 	const [selected, getselected] = useState([]);
+	const [loading, setLoading] = useState(false);
+	useEffect(() => {
+		setLoading(true);
+		setTimeout(() => {
+			setLoading(false);
+		}, 1000);
+	}, []);
 	const handleProducts = (product) => {
 		let newCart = [];
 		const exists = selected.find(
@@ -65,16 +74,24 @@ function App() {
 	//console.log(selected.map((v) => v.price * v.quantity));
 	return (
 		<div className="App">
-			<Navbar cart={selected} />
-			<Routes>
-				<Route path="/" element={<Home button={handleProducts} />} />
-				<Route
-					path="/cart"
-					element={
-						<Cart cart={selected} plus={inrcreament} minus={deccreament} />
-					}
-				/>
-			</Routes>
+			{loading ? (
+				<div className="preloader_center">
+					<PropagateLoader color="yellow" animation="slide-right" />
+				</div>
+			) : (
+				<>
+					<Navbar cart={selected} />
+					<Routes>
+						<Route path="/" element={<Home button={handleProducts} />} />
+						<Route
+							path="/cart"
+							element={
+								<Cart cart={selected} plus={inrcreament} minus={deccreament} />
+							}
+						/>
+					</Routes>
+				</>
+			)}
 		</div>
 	);
 }

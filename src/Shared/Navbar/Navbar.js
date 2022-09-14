@@ -13,9 +13,11 @@ const Navbar = ({ cart }) => {
 	const grandTotal = total + shipping + tax;
 
 	return (
-		<div className="navbar shadow-md bg-stone-50">
+		<div className="navbar shadow-md bg-stone-50 sticky">
 			<div className="flex-1">
-				<a className="btn btn-ghost normal-case text-xl">daisyUI</a>
+				<Link to="/" className="btn btn-ghost normal-case text-xl">
+					ema clone
+				</Link>
 			</div>
 			<div className="flex-none">
 				<div className="dropdown dropdown-end">
