@@ -26,9 +26,12 @@ const Navbar = ({ cart }) => {
 				>
 					login
 				</label>
-				<div className="btn btn-primary bg-gradient-to-r from-secondary to-primary">
+				<label
+					className="btn btn-primary bg-gradient-to-r from-secondary to-primary"
+					htmlFor="my-modal-4"
+				>
 					Register
-				</div>
+				</label>
 				<div className="dropdown dropdown-end">
 					<label tabIndex={0} className="btn btn-ghost btn-circle">
 						<div className="indicator">
@@ -102,13 +105,49 @@ const Navbar = ({ cart }) => {
 					>
 						✕
 					</label>
-					<h3 className="text-lg font-bold">
-						Congratulations random Internet user!
-					</h3>
-					<p className="py-4">
-						You've been selected for a chance to get one year of subscription to
-						use Wikipedia for free!
-					</p>
+					<input
+						type="text"
+						placeholder="Type here"
+						className="input w-full mb-3 font-medium bg-accent mt-10 "
+					/>
+					<input
+						type="text"
+						placeholder="Type here"
+						className="input w-full font-medium mb-3 bg-accent"
+					/>
+					<button
+						type="submit"
+						className="btn btn-primary text-white w-full bg-gradient-to-r from-secondary to-primary"
+					>
+						logIn
+					</button>
+				</div>
+			</div>
+			<input type="checkbox" id="my-modal-4" className="modal-toggle" />
+			<div className="modal z-10">
+				<div className="modal-box relative">
+					<label
+						htmlFor="my-modal-4"
+						className="btn btn-sm btn-circle absolute right-2 top-2"
+					>
+						✕
+					</label>
+					<input
+						type="text"
+						placeholder="Type here"
+						className="input w-full mb-3 font-medium bg-accent mt-10 "
+					/>
+					<input
+						type="text"
+						placeholder="Type here"
+						className="input w-full font-medium mb-3 bg-accent"
+					/>
+					<button
+						type="submit"
+						className="btn btn-primary text-white w-full bg-gradient-to-r from-secondary to-primary"
+					>
+						logIn
+					</button>
 				</div>
 			</div>
 		</div>
