@@ -89,6 +89,12 @@ function App() {
 								<Cart cart={selected} plus={inrcreament} minus={deccreament} />
 							}
 						/>
+						<Route path="/login" element={<Home button={handleProducts} />} />
+
+						<Route
+							path="/register"
+							element={<Home button={handleProducts} />}
+						/>
 					</Routes>
 				</>
 			)}

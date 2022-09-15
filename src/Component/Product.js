@@ -8,7 +8,7 @@ const Product = ({ products, handleBtn }) => {
 				Price : ${products.price}
 			</div>
 			<button
-				className="btn btn-primary w-full"
+				className="btn btn-primary text-white w-full bg-gradient-to-r from-secondary to-primary"
 				onClick={() => handleBtn(products)}
 			>
 				Add to cart
