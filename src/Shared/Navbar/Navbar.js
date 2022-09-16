@@ -97,7 +97,7 @@ const Navbar = ({ cart }) => {
 				</div>
 			</div>
 			<input type="checkbox" id="my-modal-3" className="modal-toggle" />
-			<div className="modal z-10">
+			<div className="modal">
 				<div className="modal-box relative">
 					<label
 						htmlFor="my-modal-3"
@@ -124,7 +124,7 @@ const Navbar = ({ cart }) => {
 				</div>
 			</div>
 			<input type="checkbox" id="my-modal-4" className="modal-toggle" />
-			<div className="modal z-10">
+			<div className="modal">
 				<div className="modal-box relative">
 					<label
 						htmlFor="my-modal-4"
